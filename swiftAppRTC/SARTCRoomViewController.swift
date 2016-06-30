@@ -35,15 +35,21 @@ class SARTCRoomViewController: UIViewController {
     }
     
     func joinButtonTapped(sender:UIButton) {
-        let sb = UIStoryboard(name: "vidchat", bundle: nil)
-        let sbvc = sb.instantiateViewControllerWithIdentifier("SARTCVideoChatViewController") as! SARTCVideoChatViewController
-//        let vc:SARTCVideoChatViewController = SARTCVideoChatViewController()
-//        vc.roomName = roomNumberField.text!
-//        vc.roomUrl = "https://apprtc.appspot.com/r/\(roomNumberField.text!)"
         
-        sbvc.roomName = roomNumberField.text!
-        sbvc.roomUrl = "https://apprtc.appspot.com/r/\(roomNumberField.text!)"
-        navigationController?.pushViewController(sbvc, animated: true)
+    
+        let programmatic:Bool = false
+        let vc:SARTCVideoChatViewController!
+        
+        if programmatic {
+            vc = SARTCVideoChatViewController()
+        } else {
+            let sb = UIStoryboard(name: "vidchat", bundle: nil)
+            vc = sb.instantiateViewControllerWithIdentifier("SARTCVideoChatViewController") as! SARTCVideoChatViewController
+        }
+        
+        vc.roomName = roomNumberField.text!
+        vc.roomUrl = "https://apprtc.appspot.com/r/\(roomNumberField.text!)"
+        navigationController?.pushViewController(vc, animated: true)
         self.roomNumberField.resignFirstResponder()
     }
     
