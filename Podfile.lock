@@ -1,0 +1,15 @@
+PODS:
+  - libjingle_peerconnection (11177.2.0)
+  - SocketRocket (0.5.1)
+
+DEPENDENCIES:
+  - libjingle_peerconnection
+  - SocketRocket
+
+SPEC CHECKSUMS:
+  libjingle_peerconnection: 3458f646ddd61f08a9f3a0c43fb01fff5c165eb8
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+
+PODFILE CHECKSUM: 15f2cb721c581df08edc86def2c78f23c700ea98
+
+COCOAPODS: 1.0.1
