@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A6DF20625937D0E55D1021B0 /* Pods_swiftAppRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3888345204AF0C55ED176900 /* Pods_swiftAppRTC.framework */; };
+		F62BC0781D24D0E8000D17F8 /* vidchat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62BC0771D24D0E8000D17F8 /* vidchat.storyboard */; };
 		F647DB641D2456CF00E5554F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F647DB631D2456CF00E5554F /* AppDelegate.swift */; };
 		F647DB661D2456CF00E5554F /* SARTCRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F647DB651D2456CF00E5554F /* SARTCRoomViewController.swift */; };
 		F647DB6B1D2456CF00E5554F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F647DB6A1D2456CF00E5554F /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		340FBBC408D579E19E1E81B6 /* Pods-swiftAppRTC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftAppRTC.release.xcconfig"; path = "Pods/Target Support Files/Pods-swiftAppRTC/Pods-swiftAppRTC.release.xcconfig"; sourceTree = "<group>"; };
 		3888345204AF0C55ED176900 /* Pods_swiftAppRTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swiftAppRTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B10D0AD555FF8C22AD324DF /* Pods-swiftAppRTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swiftAppRTC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swiftAppRTC/Pods-swiftAppRTC.debug.xcconfig"; sourceTree = "<group>"; };
+		F62BC0771D24D0E8000D17F8 /* vidchat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = vidchat.storyboard; sourceTree = "<group>"; };
 		F647DB601D2456CF00E5554F /* swiftAppRTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftAppRTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F647DB631D2456CF00E5554F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F647DB651D2456CF00E5554F /* SARTCRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SARTCRoomViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				F647DB961D2478D300E5554F /* Lib */,
 				F647DB631D2456CF00E5554F /* AppDelegate.swift */,
 				F647DB751D24644200E5554F /* SARTCVideoChatViewController.swift */,
+				F62BC0771D24D0E8000D17F8 /* vidchat.storyboard */,
 				F647DB651D2456CF00E5554F /* SARTCRoomViewController.swift */,
 				F647DB6A1D2456CF00E5554F /* Assets.xcassets */,
 				F647DB6C1D2456CF00E5554F /* LaunchScreen.storyboard */,
@@ -246,6 +249,7 @@
 				TargetAttributes = {
 					F647DB5F1D2456CF00E5554F = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 4C8V97R8N3;
 					};
 				};
 			};
@@ -273,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F647DB6E1D2456CF00E5554F /* LaunchScreen.storyboard in Resources */,
+				F62BC0781D24D0E8000D17F8 /* vidchat.storyboard in Resources */,
 				F647DB6B1D2456CF00E5554F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,11 +457,14 @@
 			baseConfigurationReference = 3B10D0AD555FF8C22AD324DF /* Pods-swiftAppRTC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = swiftAppRTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stan.swiftAppRTC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "swiftAppRTC-Bridging-Header.h";
 			};
 			name = Debug;
@@ -466,11 +474,14 @@
 			baseConfigurationReference = 340FBBC408D579E19E1E81B6 /* Pods-swiftAppRTC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = swiftAppRTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stan.swiftAppRTC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "swiftAppRTC-Bridging-Header.h";
 			};
 			name = Release;

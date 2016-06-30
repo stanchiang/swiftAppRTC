@@ -13,14 +13,18 @@ class SARTCVideoChatViewController: UIViewController, ARDAppClientDelegate, RTCE
 
     var SERVER_HOST_URL = "https://apprtc.appspot.com"
     
-    var remoteView:RTCEAGLVideoView = RTCEAGLVideoView()
-    var localView:RTCEAGLVideoView = RTCEAGLVideoView()
-    var footerView:UIView = UIView()
-    var urlLabel:UILabel = UILabel()
-    var buttonContainerView:UIView = UIView()
-    var audioButton:UIButton = UIButton()
-    var videoButton:UIButton = UIButton()
-    var hangupButton:UIButton = UIButton()
+//    var remoteView:RTCEAGLVideoView = RTCEAGLVideoView()
+//    var localView:RTCEAGLVideoView = RTCEAGLVideoView()
+    
+    @IBOutlet weak var remoteView: RTCEAGLVideoView!
+    @IBOutlet weak var localView: RTCEAGLVideoView!
+    
+//    var footerView:UIView = UIView()
+//    var urlLabel:UILabel = UILabel()
+//    var buttonContainerView:UIView = UIView()
+//    var audioButton:UIButton = UIButton()
+//    var videoButton:UIButton = UIButton()
+//    var hangupButton:UIButton = UIButton()
     
     var remoteViewTopConstraint:NSLayoutConstraint = NSLayoutConstraint()
     var remoteViewRightConstraint:NSLayoutConstraint = NSLayoutConstraint()
@@ -30,7 +34,7 @@ class SARTCVideoChatViewController: UIViewController, ARDAppClientDelegate, RTCE
     var localViewHeightConstraint:NSLayoutConstraint = NSLayoutConstraint()
     var localViewRightConstraint:NSLayoutConstraint = NSLayoutConstraint()
     var localViewBottomConstraint:NSLayoutConstraint = NSLayoutConstraint()
-    var footerViewBottomConstraint:NSLayoutConstraint = NSLayoutConstraint()
+//    var footerViewBottomConstraint:NSLayoutConstraint = NSLayoutConstraint()
     var buttonContainerViewLeftConstraint:NSLayoutConstraint = NSLayoutConstraint()
     
     
@@ -53,9 +57,9 @@ class SARTCVideoChatViewController: UIViewController, ARDAppClientDelegate, RTCE
         isAudioMute = false
         isVideoMute = false
         
-        audioButton.layer.cornerRadius = 20.0
-        videoButton.layer.cornerRadius = 20.0
-        hangupButton.layer.cornerRadius = 20.0
+//        audioButton.layer.cornerRadius = 20.0
+//        videoButton.layer.cornerRadius = 20.0
+//        hangupButton.layer.cornerRadius = 20.0
         
         //Add Tap to hide/show controls
         var tapGestureRecognizer:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SARTCVideoChatViewController.toggleButtonContainer))
@@ -86,7 +90,7 @@ class SARTCVideoChatViewController: UIViewController, ARDAppClientDelegate, RTCE
         localViewHeightConstraint.constant = 0.0
         localViewWidthConstraint.constant = self.view.frame.size.height
         localViewHeightConstraint.constant = self.view.frame.size.width
-        footerViewBottomConstraint.constant = 0.0
+//        footerViewBottomConstraint.constant = 0.0
         
         //Connect to the room
         disconnect()
@@ -95,7 +99,7 @@ class SARTCVideoChatViewController: UIViewController, ARDAppClientDelegate, RTCE
         client?.serverHostUrl = SERVER_HOST_URL
         client?.connectToRoomWithId(roomName, options: nil)
         
-        urlLabel.text = roomUrl
+//        urlLabel.text = roomUrl
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -117,7 +121,7 @@ class SARTCVideoChatViewController: UIViewController, ARDAppClientDelegate, RTCE
         return true
     }
     
-    func audioButtonPressed(sender: UIButton) {
+    @IBAction func audioButtonPressed(sender: UIButton) {
         let audioButton:UIButton = sender
         if isAudioMute {
             client?.unmuteAudioIn()
@@ -128,7 +132,21 @@ class SARTCVideoChatViewController: UIViewController, ARDAppClientDelegate, RTCE
             audioButton.setImage(UIImage(named: "audioOff"), forState: UIControlState.Normal)
             isAudioMute = true
         }
+
     }
+    
+//    func audioButtonPressed(sender: UIButton) {
+//        let audioButton:UIButton = sender
+//        if isAudioMute {
+//            client?.unmuteAudioIn()
+//            audioButton.setImage(UIImage(named: "audioOn"), forState: UIControlState.Normal)
+//            isAudioMute = false
+//        } else {
+//            client?.muteAudioIn()
+//            audioButton.setImage(UIImage(named: "audioOff"), forState: UIControlState.Normal)
+//            isAudioMute = true
+//        }
+//    }
     
     func videoButtonPressed(sender: UIButton) {
         let videoButton = sender
@@ -154,15 +172,15 @@ class SARTCVideoChatViewController: UIViewController, ARDAppClientDelegate, RTCE
     }
     
     func disconnect() {
-        if (client != nil) {
-            if (localVideoTrack != nil) { localVideoTrack?.removeRenderer(localView) }
-            if (remoteVideoTrack != nil) { remoteVideoTrack?.removeRenderer(remoteView) }
-            localVideoTrack = nil
-//            [self.localView renderFrame:nil];
-            remoteVideoTrack = nil
-//            [self.remoteView renderFrame:nil];
-            client?.disconnect() //doesn't that make this a recursive mem leak?
-        }
+//        if (client != nil) {
+//            if (localVideoTrack != nil) { localVideoTrack?.removeRenderer(localView) }
+//            if (remoteVideoTrack != nil) { remoteVideoTrack?.removeRenderer(remoteView) }
+//            localVideoTrack = nil
+////            [self.localView renderFrame:nil];
+//            remoteVideoTrack = nil
+////            [self.remoteView renderFrame:nil];
+//            client?.disconnect() //doesn't that make this a recursive mem leak?
+//        }
     }
     
     func remoteDisconnected() {
@@ -178,10 +196,10 @@ class SARTCVideoChatViewController: UIViewController, ARDAppClientDelegate, RTCE
         UIView.animateWithDuration(0.3) { 
             if self.buttonContainerViewLeftConstraint.constant <= -40.0 {
                 self.buttonContainerViewLeftConstraint.constant = 20.0
-                self.buttonContainerView.alpha = 1.0
+//                self.buttonContainerView.alpha = 1.0
             } else {
                 self.buttonContainerViewLeftConstraint.constant = -40.0
-                self.buttonContainerView.alpha = 0.0
+//                self.buttonContainerView.alpha = 0.0
             }
             self.view.layoutIfNeeded()
         }
@@ -223,14 +241,14 @@ class SARTCVideoChatViewController: UIViewController, ARDAppClientDelegate, RTCE
             if orientation == UIDeviceOrientation.LandscapeLeft || orientation == UIDeviceOrientation.LandscapeRight {
                 videoRect = CGRectMake(0, 0, self.view.frame.size.width/4.0, self.view.frame.size.width/4.0)
             }
+            print("self.localView.frame  \(self.localView.frame)")
             let videoFrame:CGRect = AVMakeRectWithAspectRatioInsideRect(self.localView.frame.size, videoRect)
-            
             self.localViewWidthConstraint.constant = videoFrame.size.width
             self.localViewHeightConstraint.constant = videoFrame.size.height
             
             self.localViewBottomConstraint.constant = 28.0
             self.localViewRightConstraint.constant = 28.0
-            self.footerViewBottomConstraint.constant = -80.0
+//            self.footerViewBottomConstraint.constant = -80.0
             self.view.layoutIfNeeded()
         }
     }

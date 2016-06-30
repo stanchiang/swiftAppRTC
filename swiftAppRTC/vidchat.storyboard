@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Video Chat View Controller-->
+        <scene sceneID="acA-Du-v8y">
+            <objects>
+                <viewController storyboardIdentifier="SARTCVideoChatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jV1-bh-e7Q" customClass="SARTCVideoChatViewController" customModule="swiftAppRTC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0lc-iA-vS2"/>
+                        <viewControllerLayoutGuide type="bottom" id="QZG-cc-qE3"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Uwk-uG-lig">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ZUJ-kQ-iNS" userLabel="Remote View" customClass="RTCEAGLVideoView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="r2P-I3-MIc" userLabel="Local View" customClass="RTCEAGLVideoView">
+                                <rect key="frame" x="452" y="452" width="120" height="120"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="A45-jg-7mq"/>
+                                    <constraint firstAttribute="width" constant="120" id="MSC-hQ-i3o"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZUJ-kQ-iNS" firstAttribute="top" secondItem="Uwk-uG-lig" secondAttribute="top" id="91V-G5-zo9"/>
+                            <constraint firstAttribute="trailing" secondItem="ZUJ-kQ-iNS" secondAttribute="trailing" id="BhD-0f-Zaa"/>
+                            <constraint firstItem="ZUJ-kQ-iNS" firstAttribute="leading" secondItem="Uwk-uG-lig" secondAttribute="leading" id="LYc-2x-RDd"/>
+                            <constraint firstItem="QZG-cc-qE3" firstAttribute="top" secondItem="r2P-I3-MIc" secondAttribute="bottom" constant="28" id="TBG-D1-Lox"/>
+                            <constraint firstItem="QZG-cc-qE3" firstAttribute="top" secondItem="ZUJ-kQ-iNS" secondAttribute="bottom" id="h2C-8y-CKI"/>
+                            <constraint firstAttribute="trailing" secondItem="r2P-I3-MIc" secondAttribute="trailing" constant="28" id="qHu-lo-oM2"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="localView" destination="r2P-I3-MIc" id="QIz-fq-srW"/>
+                        <outlet property="remoteView" destination="ZUJ-kQ-iNS" id="lVS-EZ-YcS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uoy-Tz-Eou" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861" y="1161"/>
+        </scene>
+    </scenes>
+</document>
