@@ -37,11 +37,16 @@ class SARTCRoomViewController: UIViewController {
     func joinButtonTapped(sender:UIButton) {
         
     
-        let programmatic:Bool = false
+        let programmatic:Bool = true
         let vc:SARTCVideoChatViewController!
         
         if programmatic {
-            vc = SARTCVideoChatViewController()
+            let vc = NewVideoChatViewController()
+            vc.roomName = roomNumberField.text!
+            vc.roomUrl = "https://apprtc.appspot.com/r/\(roomNumberField.text!)"
+            navigationController?.pushViewController(vc, animated: true)
+            self.roomNumberField.resignFirstResponder()
+            return
         } else {
             let sb = UIStoryboard(name: "vidchat", bundle: nil)
             vc = sb.instantiateViewControllerWithIdentifier("SARTCVideoChatViewController") as! SARTCVideoChatViewController

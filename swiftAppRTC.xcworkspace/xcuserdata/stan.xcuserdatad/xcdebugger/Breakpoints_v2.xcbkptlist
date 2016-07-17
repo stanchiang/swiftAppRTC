@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "swiftAppRTC/SARTCVideoChatViewController.swift"
+            timestampString = "489021281.873446"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
+            landmarkName = "videoView(_:didChangeVideoSize:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swiftAppRTC.SARTCVideoChatViewController.videoView (Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.RTCEAGLVideoView&gt;, didChangeVideoSize : __C.CGSize) -&gt; ()"
+                  moduleName = "swiftAppRTC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stan/swiftAppRTC/swiftAppRTC/SARTCVideoChatViewController.swift"
+                  timestampString = "490482642.210994"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "swiftAppRTC.SARTCVideoChatViewController.(videoView (Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.RTCEAGLVideoView&gt;, didChangeVideoSize : __C.CGSize) -&gt; ()).(closure #1)"
+                  moduleName = "swiftAppRTC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stan/swiftAppRTC/swiftAppRTC/SARTCVideoChatViewController.swift"
+                  timestampString = "490482642.211129"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "267"
+                  endingLineNumber = "267"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

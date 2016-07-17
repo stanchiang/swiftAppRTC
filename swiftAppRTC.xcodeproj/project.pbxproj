@@ -39,6 +39,7 @@
 		F647DBCE1D24795A00E5554F /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F647DBCD1D24795A00E5554F /* libstdc++.6.tbd */; };
 		F647DBD01D24796400E5554F /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F647DBCF1D24796400E5554F /* libicucore.tbd */; };
 		F647DBD21D24797200E5554F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F647DBD11D24797200E5554F /* libc++.tbd */; };
+		F68BE4091D3C276E0014DB4F /* NewVideoChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68BE4081D3C276E0014DB4F /* NewVideoChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		F647DBD11D24797200E5554F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		F647DBD61D2479A000E5554F /* swiftAppRTC-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "swiftAppRTC-Bridging-Header.h"; path = "../swiftAppRTC-Bridging-Header.h"; sourceTree = "<group>"; };
 		F647DBD81D247B9A00E5554F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F68BE4081D3C276E0014DB4F /* NewVideoChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewVideoChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				F647DB961D2478D300E5554F /* Lib */,
 				F647DB631D2456CF00E5554F /* AppDelegate.swift */,
 				F647DB751D24644200E5554F /* SARTCVideoChatViewController.swift */,
+				F68BE4081D3C276E0014DB4F /* NewVideoChatViewController.swift */,
 				F62BC0771D24D0E8000D17F8 /* vidchat.storyboard */,
 				F647DB651D2456CF00E5554F /* SARTCRoomViewController.swift */,
 				F647DB6A1D2456CF00E5554F /* Assets.xcassets */,
@@ -347,6 +350,7 @@
 				F647DBB41D2478D300E5554F /* RTCSessionDescription+JSON.m in Sources */,
 				F647DBAF1D2478D300E5554F /* ARDUtilities.m in Sources */,
 				F647DB641D2456CF00E5554F /* AppDelegate.swift in Sources */,
+				F68BE4091D3C276E0014DB4F /* NewVideoChatViewController.swift in Sources */,
 				F647DBAC1D2478D300E5554F /* ARDMessageResponse.m in Sources */,
 				F647DBAD1D2478D300E5554F /* ARDRegisterResponse.m in Sources */,
 				F647DBB31D2478D300E5554F /* RTCMediaConstraints+JSON.m in Sources */,

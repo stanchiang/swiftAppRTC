@@ -91,6 +91,8 @@ class SARTCVideoChatViewController: UIViewController, ARDAppClientDelegate, RTCE
         localViewWidthConstraint.constant = self.view.frame.size.height
         localViewHeightConstraint.constant = self.view.frame.size.width
 //        footerViewBottomConstraint.constant = 0.0
+        print("localViewWidthConstraint.constant \(localViewWidthConstraint.constant)")
+        print("localViewHeightConstraint.constant \(localViewHeightConstraint.constant)")
         
         //Connect to the room
         disconnect()
@@ -172,15 +174,15 @@ class SARTCVideoChatViewController: UIViewController, ARDAppClientDelegate, RTCE
     }
     
     func disconnect() {
-//        if (client != nil) {
-//            if (localVideoTrack != nil) { localVideoTrack?.removeRenderer(localView) }
-//            if (remoteVideoTrack != nil) { remoteVideoTrack?.removeRenderer(remoteView) }
-//            localVideoTrack = nil
-////            [self.localView renderFrame:nil];
-//            remoteVideoTrack = nil
-////            [self.remoteView renderFrame:nil];
-//            client?.disconnect() //doesn't that make this a recursive mem leak?
-//        }
+        if (client != nil) {
+            if (localVideoTrack != nil) { localVideoTrack?.removeRenderer(localView) }
+            if (remoteVideoTrack != nil) { remoteVideoTrack?.removeRenderer(remoteView) }
+            localVideoTrack = nil
+//            [self.localView renderFrame:nil];
+            remoteVideoTrack = nil
+//            [self.remoteView renderFrame:nil];
+            client?.disconnect() //doesn't that make this a recursive mem leak?
+        }
     }
     
     func remoteDisconnected() {
